@@ -1,0 +1,17 @@
+[Unit]
+Description=CDP Bridge for OpenClaw Agent Browser
+After=network.target
+
+[Service]
+Type=simple
+# UPDATE THIS PATH to where you cloned the repo
+ExecStart=/path/to/openclaw-agent-browser/start.sh
+Restart=always
+RestartSec=5
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+# Run as your user, not root
+User=%i
+WorkingDirectory=/path/to/openclaw-agent-browser
+
+[Install]
+WantedBy=default.target

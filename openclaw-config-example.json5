@@ -1,0 +1,19 @@
+// Add this to your OpenClaw config.json5
+// This configures the "openclaw" browser profile to use the CDP bridge
+{
+  browser: {
+    // Points to the CDP bridge proxy
+    cdpUrl: "http://127.0.0.1:18793",
+    
+    // Don't launch a new browser — attach to the running one
+    attachOnly: true,
+    
+    // Optional: disable JS evaluation for security hardening
+    // evaluateEnabled: false,
+  }
+}
+
+// Usage in your agent:
+//   browser(action="navigate", profile="openclaw", targetUrl="https://example.com")
+//   browser(action="snapshot", profile="openclaw", compact=true)
+//   browser(action="act", profile="openclaw", request={kind: "click", ref: "e5"})

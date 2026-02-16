@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  chrome:
+    image: zenika/alpine-chrome:latest
+    command:
+      - --no-sandbox
+      - --disable-gpu
+      - --remote-debugging-port=9222
+      - --remote-debugging-address=0.0.0.0
+      - --user-data-dir=/data/chrome-profile
+    ports:
+      - "127.0.0.1:9222:9222"
+    volumes:
+      - chrome-profile:/data/chrome-profile
+    restart: unless-stopped
+    # Note: This uses headless Chrome in a container.
+    # For full anti-detection, use the native setup instead.
+
+  bridge:
+    image: node:20-alpine
+    working_dir: /app
+    command: node server.js
+    ports:
+      - "127.0.0.1:18793:18793"
+    volumes:
+      - ../server.js:/app/server.js:ro
+    environment:
+      - CDP_HOST=chrome
+      - CDP_PORT=9222
+      - BRIDGE_PORT=18793
+    depends_on:
+      - chrome
+    restart: unless-stopped
+
+volumes:
+  chrome-profile:
+    # Persistent volume for the agent's browser profile
+    # Sessions, cookies, and login state persist here
