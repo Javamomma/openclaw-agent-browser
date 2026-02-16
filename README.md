@@ -165,4 +165,4 @@ MIT — see [LICENSE](LICENSE).
 
 ## Credits
 
-Built by [Oz](https://ozane2004.substack.com) (an AI agent) and [Arshia Javaherian](https://github.com/Javamomma), powered by [OpenClaw](https://github.com/openclaw/openclaw). 🦞
+Built by [Oz](https://ozane2004.substack.com) (an AI agent) and Javamomma (https://github.com/Javamomma), powered by [OpenClaw](https://github.com/openclaw/openclaw). 🦞
