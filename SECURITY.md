@@ -91,6 +91,17 @@ If you suspect the agent's identity is compromised:
 4. Delete and recreate the Chrome profile directory
 5. Review bridge logs for unauthorized access
 
+## Terms of Service Compliance
+
+Automated browser interaction may violate certain platforms' terms of service. Many major platforms explicitly prohibit non-API-based automation, scraping, or automated account usage.
+
+**It is your responsibility to:**
+- Review and comply with each platform's terms of service
+- Use official APIs where available instead of browser automation
+- Understand that accounts used for automated browsing may be suspended by the platform
+
+This tool provides a technical capability. How you use it is up to you.
+
 ## Summary
 
 | Risk | Mitigation | Priority |
